@@ -6,9 +6,28 @@ var generateBtn = document.querySelector("#generate");
 // 1: code to make button trigger on click
 // 2: create prompts upon clicking button to ask parameters of password, push parameters into an array
 // 3: create functions which utilizes parameters to create password
+
 function pushLowerCase() {
   for (var i = 0; i < lowerCase.length; i++){
     possiblePassword.push(lowerCase[i])
+  }
+}
+
+function pushUpperCase() {
+  for (var i = 0; i < upperCase.length; i++){
+    possiblePassword.push(upperCase[i])
+  }
+}
+
+function pushNumeric() {
+  for (var i = 0; i < numeric.length; i++){
+    possiblePassword.push(numeric[i])
+  }
+}
+
+function pushSpecial() {
+  for (var i = 0; i < special.length; i++){
+    possiblePassword.push(special[i])
   }
 }
 
@@ -26,6 +45,22 @@ function writePassword() {
   if (isLowerCase) {
     pushLowerCase()
   }
+
+  var isUpperCase = window.confirm('Do you want uppercase letters in your password?');
+  if (isUpperCase) {
+    pushUpperCase()
+  }
+
+  var isNumeric = window.confirm('Do you want numeric characters in your password?');
+  if (isNumeric) {
+    pushNumeric()
+  }
+
+  var isSpecial = window.confirm('Do you want special characters in your password?');
+  if (isSpecial) {
+    pushSpecial()
+  }
+
 }
   //var password = generatePassword();
   //var passwordText = document.querySelector("#password");
