@@ -93,7 +93,7 @@ function makePassword() {
   let tempPassword = ""
   characterAsk();
   for (var i = 0; i < reqPasswordLength; i++){
-    tempPassword += (possiblePassword[Math.round(Math.random() * (possiblePassword.length - 1) + 1)])
+    tempPassword += (possiblePassword[Math.floor(Math.random() * possiblePassword.length)])
   }
   console.log(tempPassword)
   return tempPassword
