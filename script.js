@@ -81,7 +81,7 @@ function passwordAsk() {
     (reqPasswordLength > 128)
     ){
     confirm("Please enter a number between 8 and 128")
-    passwordAsk();
+    reqPasswordLength = passwordAsk();
   }
   return reqPasswordLength
 }
